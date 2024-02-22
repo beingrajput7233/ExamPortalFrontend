@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { UserService } from '../../services/user.service';
+import Swal from 'sweetalert2';
 @Component({
   selector: 'app-signup',
   templateUrl: './signup.component.html',
@@ -33,7 +34,8 @@ export class SignupComponent {
       (data)=>{
         //success pr
         console.log(data);
-        alert("success");
+        // alert("success");
+        Swal.fire('Success','User is registered successfully!','success');
       },
       (error)=>{
         //error pr
