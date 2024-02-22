@@ -18,8 +18,6 @@ export class SignupComponent {
       email:'',
       phone:'',
     };
-
-
   // form submit wala function
   formSubmit(){
     console.log(this.user);
@@ -44,4 +42,6 @@ export class SignupComponent {
       }
     )
   }
+
+  
 }
