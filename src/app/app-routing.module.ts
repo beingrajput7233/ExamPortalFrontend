@@ -5,6 +5,8 @@ import { LoginComponent } from './pages/login/login.component';
 import { HomeComponent } from './pages/home/home.component';
 import { DashboardComponent } from './pages/admin/dashboard/dashboard.component';
 import { UserDashboardComponent } from './pages/user/user-dashboard/user-dashboard.component';
+import { adminguardGuard } from './guards/adminguard.guard';
+import { normalGuard } from './guards/normal.guard';
 const routes: Routes = [
   // for mapping components with paths
 
@@ -28,11 +30,13 @@ const routes: Routes = [
     path:'admin',
     component:DashboardComponent,
     pathMatch:'full',
+    canActivate:[adminguardGuard],
   },
   {
     path:'user-dashboard',
     component:UserDashboardComponent,
     pathMatch:'full',
+    canActivate:[normalGuard],
   }
 ];
 
