@@ -6,10 +6,31 @@
     </a>
     <span>ExamPortal</span>
     <span class="example-spacer"></span>
-    <a  [routerLink]="'/login'" mat-icon-button class="example-icon favorite-icon" aria-label="Example icon-button with heart icon">
+    <!-- conditional rendering -->
+    <a  
+    *ngIf="!login.isLoggedIn()"
+    [routerLink]="'/login'" 
+    mat-icon-button class="example-icon favorite-icon" aria-label="Example icon-button with heart icon">
       <mat-icon>login</mat-icon>
     </a>
-    <a [routerLink]="'/signup'" mat-icon-button class="example-icon favorite-icon mr20 ml20" aria-label="Example icon-button with heart icon">
+    <a 
+    *ngIf="!login.isLoggedIn()"
+    [routerLink]="'/signup'" mat-icon-button class="example-icon favorite-icon mr20 ml20" aria-label="Example icon-button with heart icon">
         <mat-icon>app_registration</mat-icon>>
       </a>
+    
+      <a 
+      *ngIf="login.isLoggedIn()"
+       mat-icon-button class="example-icon favorite-icon mr20 ml20" aria-label="Example icon-button with heart icon">
+          <!-- {{user?.username}} -->
+        </a>
+
+
+      <a 
+      (click)="logout()"
+      *ngIf="login.isLoggedIn()"
+       mat-icon-button class="example-icon favorite-icon mr20 ml20" aria-label="Example icon-button with heart icon">
+          <mat-icon>logout</mat-icon>>
+        </a>
+    
   </mat-toolbar>

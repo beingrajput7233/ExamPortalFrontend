@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { LoginService } from '../../services/login.service';
 import Swal from 'sweetalert2';
+import { Router } from '@angular/router';
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
@@ -8,7 +9,7 @@ import Swal from 'sweetalert2';
 })
 export class LoginComponent {
 
-  constructor(private loginService:LoginService){}
+  constructor(private loginService:LoginService,private router:Router){}
 
   loginData={
     username:'',
@@ -49,11 +50,13 @@ export class LoginComponent {
               //admin
 
               //redirect
-              window.location.href='/admin'
+              // window.location.href='/admin'
+              this.router.navigate(['admin'])
             }
             else if(this.loginService.getUserRole()=='Normal'){
               //normal
-              window.location.href='/user-dashboard'
+              // window.location.href='/user-dashboard'
+              this.router.navigate(['user-dashboard'])
             }
             else{
               this.loginService.logout();
