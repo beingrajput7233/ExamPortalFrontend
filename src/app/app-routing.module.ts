@@ -7,6 +7,8 @@ import { DashboardComponent } from './pages/admin/dashboard/dashboard.component'
 import { UserDashboardComponent } from './pages/user/user-dashboard/user-dashboard.component';
 import { adminguardGuard } from './guards/adminguard.guard';
 import { normalGuard } from './guards/normal.guard';
+import { ProfileComponent } from './pages/profile/profile.component';
+import { WelcomeComponent } from './pages/admin/welcome/welcome.component';
 const routes: Routes = [
   // for mapping components with paths
 
@@ -29,8 +31,21 @@ const routes: Routes = [
   {
     path:'admin',
     component:DashboardComponent,
-    pathMatch:'full',
+    // pathMatch:'full',---->removing it for child component
     canActivate:[adminguardGuard],
+    // ye admin ke andar ka component bnega...path-->admin/profile
+    children:[
+      {
+        path:'',
+        component:WelcomeComponent,
+      }
+      ,
+      {
+        // admin comp.ke andar router-outlet use krne se aaega ye
+        path:'profile',
+        component:ProfileComponent,
+      }
+    ]
   },
   {
     path:'user-dashboard',
