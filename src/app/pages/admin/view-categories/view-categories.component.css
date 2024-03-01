@@ -1,0 +1,13 @@
+.heading{
+    margin: auto;
+    width: 50%;
+    margin-left: 0px;
+    padding-left: 10px;
+    padding-top: 2%;
+    padding-bottom: 2%;
+    text-align: justify;
+}
+.listDiv{
+    height: 0.5%;
+    border: solid rgb(207, 196, 196);
+}

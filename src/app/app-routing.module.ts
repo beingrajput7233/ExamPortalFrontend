@@ -9,6 +9,8 @@ import { adminguardGuard } from './guards/adminguard.guard';
 import { normalGuard } from './guards/normal.guard';
 import { ProfileComponent } from './pages/profile/profile.component';
 import { WelcomeComponent } from './pages/admin/welcome/welcome.component';
+import { ViewCategoriesComponent } from './pages/admin/view-categories/view-categories.component';
+import { AddCategoryComponent } from './pages/admin/add-category/add-category.component';
 const routes: Routes = [
   // for mapping components with paths
 
@@ -44,6 +46,16 @@ const routes: Routes = [
         // admin comp.ke andar router-outlet use krne se aaega ye
         path:'profile',
         component:ProfileComponent,
+      }
+      ,
+      {
+        path:'categories',
+        component:ViewCategoriesComponent,
+      }
+      ,
+      {
+        path:'add-category',
+        component:AddCategoryComponent,
       }
     ]
   },
