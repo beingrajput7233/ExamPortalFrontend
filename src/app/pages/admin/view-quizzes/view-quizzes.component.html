@@ -10,7 +10,7 @@
                     <button mat-flat-button color="warn">Questions</button>
                     <button mat-stroked-button color="warn" class="ml20">Max Marks {{c.maxMarks}}</button>
                     <button mat-stroked-button color="warn" class="ml20">No. of questions: {{c.numberOfQuestions}}</button>
-                    <button mat-stroked-button color="warn" class="ml20">Update</button>
+                    <button mat-stroked-button color="warn" class="ml20" [routerLink]="'/admin/quiz/'+c.qId">Update</button>
                     <button mat-stroked-button color="warn" class="ml20">Attempts</button>
                     <button mat-stroked-button color="warn" class="ml20" (click)="deleteQuiz(c.qId)">Delete</button>
 
