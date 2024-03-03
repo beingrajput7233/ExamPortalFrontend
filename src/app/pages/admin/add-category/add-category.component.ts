@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { CategoryService } from '../../../services/category.service';
 import Swal from 'sweetalert2';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-add-category',
@@ -9,7 +10,7 @@ import Swal from 'sweetalert2';
 })
 export class AddCategoryComponent {
 
-  constructor(private categoryService:CategoryService){}
+  constructor(private categoryService:CategoryService,private router:Router){}
 
   categoryData={
     title:'',
@@ -35,7 +36,9 @@ export class AddCategoryComponent {
           description:'',
         }
         console.log(data);
-        Swal.fire('Success','Added category successfully!','success');
+        Swal.fire('Success','Added category successfully!','success').then((e)=>{
+          this.router.navigate(['/admin/categories']);
+        });;
       }
       ,
       (error)=>{

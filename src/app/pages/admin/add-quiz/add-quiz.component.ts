@@ -3,6 +3,7 @@ import { CategoryService } from '../../../services/category.service';
 import { error } from 'console';
 import Swal from 'sweetalert2';
 import { QuizService } from '../../../services/quiz.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-add-quiz',
@@ -23,7 +24,8 @@ export class AddQuizComponent implements OnInit {
 
   constructor(
     private categoryService: CategoryService,
-    private quizService: QuizService
+    private quizService: QuizService,
+    private router:Router,
   ) {}
 
   ngOnInit(): void {
@@ -58,7 +60,9 @@ export class AddQuizComponent implements OnInit {
           category: null,
         };
         console.log(data);
-        Swal.fire('Success', 'Added quiz successfully!', 'success');
+        Swal.fire('Success', 'Added quiz successfully!', 'success').then((e)=>{
+          this.router.navigate(['/admin/quizzes']);
+        });;
       },
       (error) => {
         Swal.fire('Error!!','Error while adding quiz','error');
