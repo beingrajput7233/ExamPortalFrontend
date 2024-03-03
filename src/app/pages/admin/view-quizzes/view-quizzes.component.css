@@ -8,6 +8,6 @@
     text-align: justify;
 }
 .listDiv{
-    height: 0.5%;
+    height: auto;
     border: solid rgb(207, 196, 196);
 }
