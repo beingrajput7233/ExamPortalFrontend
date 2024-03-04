@@ -80,7 +80,7 @@ const routes: Routes = [
         component:ViewQuizQuestionsComponent,
       },
       {
-        path:'add-question/:qId',
+        path:'add-question/:qId/:qTitle',
         component:AddQuestionComponent,
       }
     ]
