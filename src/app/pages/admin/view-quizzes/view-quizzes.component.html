@@ -7,7 +7,7 @@
                 <mat-card-subtitle>{{c.category.title}}</mat-card-subtitle>
                 <mat-card-content><p>{{c.description}}</p></mat-card-content>
                 
-                    <button mat-flat-button color="warn">Questions</button>
+                    <button mat-flat-button color="warn" [routerLink]="'/admin/view-questions/'+c.qId+'/'+c.title">Questions</button>
                     <button mat-stroked-button color="warn" class="ml20">Max Marks {{c.maxMarks}}</button>
                     <button mat-stroked-button color="warn" class="ml20">No. of questions: {{c.numberOfQuestions}}</button>
                     <button mat-stroked-button color="warn" class="ml20" [routerLink]="'/admin/quiz/'+c.qId">Update</button>
